@@ -1,0 +1,47 @@
+h1, h2, h3, h4, h5, h6 {
+	font-family: sans-serif;
+}
+
+h1 {
+	background-color: gray;
+	color: white;
+	text-align: center;
+	font-size: 24pt;
+	padding: 10px;
+}
+
+h2 {
+	text-decoration: overline underline;
+}
+
+h3 {
+	font-style: italic;
+}
+
+.photo {
+	border: 1px gray solid;
+	padding: 5px;
+}
+.caption {
+	text-align: center;
+	font-style: italic;
+}
+
+.leftphoto {
+	float: left;
+	margin-right: 10px;
+}
+.rightphoto {
+	float: right;
+	margin-left: 10px;
+}
+
+#credits {
+	font-size: xx-small;
+	font-family: sans-serif;
+}
+
+#all {
+	width: 1000px;
+	margin: auto;
+}

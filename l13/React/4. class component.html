@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script src="https://npmcdn.com/react@15.6.1/dist/react.js"></script>
+<script src="https://npmcdn.com/react-dom@15.6.1/dist/react-dom.js"></script>
+<script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+<script type="text/babel">
+
+class DisplayCost extends React.Component {
+  render() {
+    return <p>That will be {this.props.amount * this.props.price} dollars</p>;
+  }
+}
+
+ReactDOM.render(
+  <DisplayCost amount="5" price="10" />,
+  document.getElementById('root')
+);
+</script>
+</head>
+<body>
+<div id="root">
+</div>
+</body>
+</html>

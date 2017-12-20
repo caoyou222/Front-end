@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Grid Example</title>
+<style>
+body {
+	display: grid;
+	grid-template-columns: 200px 200px 200px;
+	grid-template-rows: auto;
+}
+article {
+	border: blue 1px solid;
+	margin: 5px;
+	padding: 15px;
+}
+#article1 {
+	grid-column-start: 1;
+	grid-row-start: 1;
+}
+#article2 {
+	grid-column-start: 2;
+	grid-row-start: 1;
+}
+#article3 {
+	grid-column-start: 1;
+	grid-row-start: 2;
+}
+#article4 {
+	grid-column-start: 2;
+	grid-row-start: 2;
+}
+</style>
+</head>
+<body>
+<article id="article1">
+<h1>Record Fullbright Numbers</h1>
+<p>A record number of Stanford students and alumni-26-have accepted Fulbright scholarships and will be pursuing special projects in the 2009-10 academic year in countries around the world, the Bechtel International Center recently announced. </p>
+</article>
+<article id="article2">
+<h1>Invention for Diagnosis</h1>
+<p>Stanford students' invention could revolutionize the way diseases are diagnosed. Stanford graduate students win two $10,000 awards for developing a portable diagnostic lab. </p>
+</article>
+<article id="article3">
+<h1>Prof Funded for Biodiversity</h1>
+<p>Stanford's Gretchen Daily wins $420,000 award for finding ways to save biodiversity</p>
+</article>
+<article id="article4">
+<h1>Stanford professor receives presidential award</h1>
+<p>Richard N. Zare is one of 22 nationwide recipients of the Presidential Award for Excellence.</p>
+</article>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Untitled Document</title>
+<style>
+#theDiv {
+	width: 400px;
+	height: 400px;
+	border: 1px solid blue;
+}
+</style>
+</head>
+
+<body>
+<h1>DOM Mouse Example</h1>
+<div id="theDiv"></div>
+<script>
+function mycontext(event) {
+ 	event.preventDefault();
+}
+document.getElementById("theDiv").addEventListener("contextmenu",mycontext,false);
+</script>
+</body>
+</html>

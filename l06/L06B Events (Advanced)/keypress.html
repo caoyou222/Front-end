@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Key Press Information</title>
+</head>
+<body>
+<script>
+function keyHandler(event) {
+    var output="key=" + event.key + "\n";
+    if(event.shiftKey) output = output + "shift ";
+    if(event.altKey) output = output + "alt ";
+    if(event.ctrlKey) output = output + "ctrl ";
+    alert(output);
+}
+
+document.addEventListener("keypress",keyHandler,false);
+</script>
+</body>
+</html>

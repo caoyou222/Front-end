@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<style>
+#theSquare {
+	position: absolute;
+	top: 200px;
+	left: 200px;
+	height: 100px;
+	width: 100px;
+	background-color: red;
+}
+</style>
+</head>
+<body>
+<h1 id="header">Example</h1>
+<div id="theSquare"></div>
+<input type="text" id="xCoord" />
+<input type="text" id="yCoord" />
+<input type="button" id="theButton" value="Click Here" />
+<script>
+function moveSquare() {
+	var xCoord = parseInt(document.getElementById("xCoord").value);
+	var yCoord = parseInt(document.getElementById("yCoord").value);
+	
+	square = document.getElementById("theSquare");
+	var currX = parseInt(document.defaultView.getComputedStyle(
+							square,"").getPropertyValue("left"));
+	var currY = parseInt(document.defaultView.getComputedStyle(
+							square,"").getPropertyValue("top"));
+							
+	square.style.left = (currX + xCoord) + "px";
+	square.style.top = (currY + yCoord) + "px";
+}
+
+var button = document.getElementById("theButton");
+button.addEventListener("click",moveSquare,false);
+</script>
+</body>
+</html>

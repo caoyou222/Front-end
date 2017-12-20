@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Test</title>
+<script>
+// ex1 is BAD, don't do this, potential a security risk
+var ex1 =
+   eval("({'name':'patrick', 'dog':'molly'})"); 
+   
+// ex2 this is the right way to do it
+var ex2 = JSON.parse('{"name":"patrick", "dog":"molly"}');
+console.log(ex2);
+</script>
+
+</head>
+<body>
+</body>
+</html>

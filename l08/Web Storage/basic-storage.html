@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Basic Storage Example</title>
+</head>
+
+<body>
+<form id="data">
+<table>
+<tr><td>Name</td>
+    <td><input type="text" id="keyName" /></td>
+	<td colspan="4">Local <input type="radio" name="sessType" value="local" checked="checked" />
+	Session <input type="radio" name="sessType" value="session" /></td></tr>
+<tr><td>Value</td>
+    <td><input type="text" id="keyValue" /></td>
+    <td><input type="button" value="Set Value" 
+	           onclick="setValue()" /></td>
+	<td><input type="button" value="Get Value" 
+               onclick="getValue()" /></td>
+	<td><input type="button" onclick="clearValue();" value="Clear Value" /></td>
+	<td><input type="button" onclick="clearAllValues();" value="Clear All Values" /></td></tr>
+</table>
+</form>
+<p><b>Warning:</b> for IE, this example will only work if you place the file on an 
+actual web server.</p>
+<script>
+
+function getAppropriateStorage() {
+	if (document.getElementById("data").sessType[0].checked) {
+		return localStorage;
+	} else {
+		return sessionStorage;
+	}
+}
+
+function setValue() {
+	var storage = getAppropriateStorage();
+	var key = document.getElementById("keyName").value;
+	var value = document.getElementById("keyValue").value;
+	
+	storage.setItem(key,value);
+}
+
+function getValue() {
+	var storage = getAppropriateStorage();
+	var key = document.getElementById("keyName").value;
+
+	document.getElementById("keyValue").value = storage.getItem(key);
+}
+
+function clearValue() {
+	var storage = getAppropriateStorage();
+	var key = document.getElementById("keyName").value;
+	
+	storage.removeItem(key);
+}
+
+function clearAllValues() {
+	var storage = getAppropriateStorage();
+	storage.clear();
+}
+
+</script>
+</body>
+</html>

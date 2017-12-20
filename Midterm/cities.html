@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>City Search</title>
+	<script src="cities-list.js" defer></script>
+	<style>
+		h1{
+			font-size: 60px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+
+<body>
+<div class="searching">
+	<h1> Search Criteria </h1>
+	<table>
+		<form>
+		<tr>
+		<td>Minimum Density</td>
+		<td><input type="textbox" id="minD" value=""></td>
+		</tr>
+		<tr>
+		<td>Maximum Density</td>
+		<td><input type="textbox" id="maxD" value=""></td>
+		</tr>
+		</form>
+	</table>
+	<input type="button" value = "Search" id = "sear">
+</div>
+<div class="results">
+	<h1>Results</h1>
+	<p id = "theList">Enter Search Criteria</p>
+</div>
+
+
+
+
+
+<script>
+var List = "";
+
+function addItem(i)
+{
+	var name = citiesList[i].name;
+	var country = citiesList[i].country;
+	var population = citiesList[i].population;
+	var area = citiesList[i].area;
+	var density = citiesList[i].density;
+
+	var newCity = name.fontsize(6);
+	var newCityInfo = "<br/>population: " + country + "<br/>" + "area: " + area + "square km <br/>" + "density: " + density + "per square km" + "<br/>";
+
+	List = List + "<br/>" + newCity + newCityInfo;
+}
+
+
+function getmaxDens()
+{
+	if(document.getElementById("maxD").value != "")
+		{return document.getElementById("maxD").value;}
+	else return 30000;
+}
+
+function getminDens()
+{
+	if(document.getElementById("minD").value != "")
+		{return document.getElementById("minD").value;}
+	else return 0;
+}
+
+function criteria()
+{
+	List = "";
+	var maxDens = getmaxDens();
+	var minDens = getminDens();
+	// document.getElementById("theList").innerHTML = maxDens + " " + minDens;
+	var count = 0;
+	for(var i = 0; i < 10; ++i)
+	{
+		if(citiesList[i].density >= minDens && citiesList[i].density <= maxDens)
+		{
+			addItem(i);
+			count++;
+		}
+
+	}
+
+	if(count == 0) List = "No City Found";
+	document.getElementById("theList").innerHTML = List;
+	
+}
+
+document.getElementById("sear").addEventListener("click", criteria, false);
+
+
+
+	
+</script>
+</body>
+</html>

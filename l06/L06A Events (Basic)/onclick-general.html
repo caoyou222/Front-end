@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>OnClick Example</title>
+</head>
+<body>
+<h1 id="header">Header</h1>
+
+<p id="firstPara">Paragraph</p>
+
+<p id="secondPara">Paragraph</p>
+
+<script>
+function clickedHeader() {
+	alert('You clicked on the header');
+}
+
+document.getElementById("header").addEventListener("click",clickedHeader,false);
+
+
+document.getElementById("firstPara").addEventListener("click",
+										function(){alert('You clicked on the first paragraph');},
+										false);
+document.getElementById("secondPara").addEventListener("click",
+										()=>{alert('You clicked on the second paragraph');},
+										false);
+</script>
+</body>
+</html>

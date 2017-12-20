@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Untitled Document</title>
+<style>
+#theDiv {
+	width: 400px;
+	height: 400px;
+	border: 1px solid blue;
+}
+</style>
+</head>
+
+<body>
+<h1>DOM Mouse Example</h1>
+<div id="theDiv"></div>
+<script>
+function mouseInfo(event) {
+    var output="sx=" + event.screenX + "; sy=" + event.screenY + "\n" +
+             "cx=" + event.clientX + "; cy=" + event.clientY + "\n" +
+		     "button=" + event.button + "\n";
+    if(event.shiftKey) output = output + "shift ";
+    if(event.altKey) output = output + "alt ";
+    if(event.ctrlKey) output = output + "ctrl ";
+    alert(output);
+}
+document.addEventListener("mousedown",mouseInfo,false);
+</script>
+</body>
+</html>

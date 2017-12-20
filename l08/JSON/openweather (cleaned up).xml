@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<current>
+	<city id="0" name="Stanford">
+		<coord lon="-122.16" lat="37.42"/>
+		<country>US</country>
+		<sun rise="2017-07-19T13:03:27" set="2017-07-20T03:26:11"/>
+	</city>
+	<temperature value="65.41" min="57.2" max="71.6" unit="fahrenheit"/>
+	<humidity value="82" unit="%"/>
+	<pressure value="1017" unit="hPa"/>
+	<wind>
+		<speed value="6.93" name="Moderate breeze"/>
+		<gusts/>
+		<direction value="270" code="W" name="West"/>
+	</wind>
+	<clouds value="20" name="few clouds"/>
+	<visibility value="11265"/>
+	<precipitation mode="no"/>
+	<weather number="801" value="few clouds" icon="02d"/>
+	<lastupdate value="2017-07-19T17:35:00"/>
+</current>

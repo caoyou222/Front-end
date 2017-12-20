@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stanford Maps</title>
+	<link rel="stylesheet" href="maps.css">
+	<script src="locations.js" defer></script>
+</head>
+<body>
+<div id="main">
+
+<div id="frame" class="column" >
+		<img id="map" alt = "image" src="map-s.gif" ondblclick="center(event)">
+
+</div>
+<div class="column" id="buttons">
+	<form>
+		<input type="button" value="Zoom In" id = "in">
+		<input type="button" value="Zoom Out" id = "out">
+	</form>
+	<form>
+		<button type="button" onclick="move(0, 0.5);">Up</button>
+		<button type="button" onclick="move(0, -0.5);">Down</button>
+		<button type="button" onclick="move(0.5, 0);">Left</button>
+		<button type="button" onclick="move(-0.5, 0);">Right</button>
+	</form>
+	<p id="sb">...</p>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

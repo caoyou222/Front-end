@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script>
+var stanford = Symbol();
+var leland = Symbol("leland");
+
+var school = stanford;
+if (school == stanford) {
+	console.log("Comparison Worked");
+}
+
+var leland2 = Symbol("leland");
+if (leland != leland2) {
+	console.log("Each Symbol call creates a new Symbol, even if String passed in is the same");
+}
+
+console.log("Symbols print their string if any");
+console.log(leland);
+console.log(stanford);
+</script>
+</head>
+<body>
+</body>
+</html>

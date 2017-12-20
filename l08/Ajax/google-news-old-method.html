@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Ajax Test</title>
+
+</head>
+
+<body>
+<h1>Google News Summaries</h1>
+<p>Information summarized from RSS feed from news.google.com</p>
+<p>This information is not live.  Live feed would require a proxy server passing data from 
+Google News to Stanford's Webserver and on to the web browser.  XMLHttpRequest objects
+cannot read from 3rd party domains, unless standard security restrictions have been removed.</p>
+
+<p>Note that this example will not run locally -- it must be placed on a webserver along with
+the accompanying news.xml file.</p>
+
+<p>This is an older version of Ajax, however, you'll still run into code using this more complex
+method to process information.  For new code, use the method from our class handout.</p>
+
+<p>
+<input type="button" value="Retrieve News" onclick="getNews();" />
+</p>
+
+<h2>News</h2>
+
+<div id="news">
+</div>
+
+<script>
+
+var requestObj = null;	// XMLHttpRequest object
+
+function getNews() {
+	requestObj = new XMLHttpRequest();
+		
+	requestObj.onreadystatechange = processNews;
+	requestObj.open('GET', './google-proxy.php', true);
+	requestObj.send(null); 
+}
+
+function processNews() {
+	if (requestObj.readyState == 4) {
+		if (requestObj.status == 200) {
+			var newsTitles = requestObj.responseXML.getElementsByTagName("item");
+			var newHTML = "<ul>";
+			for (var i=0; i < newsTitles.length; i++) {
+				newHTML = newHTML + "<li>" 
+				        + newsTitles[i].getElementsByTagName("title")[0].firstChild.nodeValue
+						+ "</li>";
+			}
+			newHTML = newHTML + "</ul>";
+			document.getElementById("news").innerHTML = newHTML;
+		} else
+			alert("Problem Response from Server: " + requestObj.status);
+	} 
+}
+
+</script>
+</body>
+</html>

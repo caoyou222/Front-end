@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script src="https://npmcdn.com/react@15.6.1/dist/react.js"></script>
+<script src="https://npmcdn.com/react-dom@15.6.1/dist/react-dom.js"></script>
+<script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+<div id="content"></div>
+<script type="text/babel">
+
+class MyForm extends React.Component {
+  constructor(props) {
+	super(props);
+	this.state = {
+			name: "",
+			phone: ""
+		};
+  }
+
+  handleNameChange(event) {
+	this.setState({name: event.target.value});
+  }
+  
+  handlePhoneChange(event) {
+	this.setState({phone: event.target.value});
+  }
+  
+  handleSubmit(event) {
+	event.preventDefault();
+  }
+  
+  render() {
+    return (
+	  <div className="myForm">
+      <form onSubmit={this.handleSubmit}>
+	  Name: <input type="text"  value={this.state.name}
+				onChange={this.handleNameChange.bind(this)} /> <br />
+	  Phone: <input type="text"  value={this.state.phone}
+				onChange={this.handlePhoneChange.bind(this)} /> <br />
+	  <input type="submit" value="Update" />
+      </form>
+	  <div>
+	  <p>{this.state.name}</p>
+	  <p>{this.state.phone}</p>
+	  </div>
+	  </div>
+    );
+  }
+};
+
+class ExampleBox extends React.Component {
+  render() {
+    return (
+      <div className="exampleBox">
+		<MyForm />
+      </div>
+    );
+  }
+};
+
+ReactDOM.render(
+	<ExampleBox />,
+	document.getElementById('content')
+);
+</script> 
+</body>
+</html>

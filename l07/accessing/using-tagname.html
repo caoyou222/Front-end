@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h1>Example</h1>
+<p>First Paragraph</p>
+<p>Second Paragraph</p>
+<p>Third Paragraph</p>
+<div>
+<input type="button" value="Click Here" id="theButton" />
+</div>
+
+<script>
+
+function change() {
+  var pElems = document.getElementsByTagName("p");
+  for(var elem of pElems) {
+	elem.style.backgroundColor = "red";
+  }
+}
+
+document.getElementById("theButton").addEventListener("click",change,false);
+
+</script>
+</body>
+</html>

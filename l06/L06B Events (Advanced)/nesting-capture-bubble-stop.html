@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Nesting Example</title>
+</head>
+
+<body>
+<div>
+<h1>Part One</h1>
+<p>A paragraph in part one</p>
+<p>Another paragraph in part one</p>
+</div>
+<div>
+<h1>Part Two</h1>
+<p>A paragraph in part two</p>
+<p>Another paragraph in part two</p>
+</div>
+
+<script>
+function stopAsk(event) {
+	if (confirm("Stop Propagation")) {
+		event.stopPropagation();
+	}
+}
+
+function documentClicked(event) {
+	alert("document clicked!");
+	stopAsk(event);
+}
+function bodyClicked(event) {
+	alert("body clicked!");
+	stopAsk(event);
+}
+function divClicked(event) {
+	alert("div clicked!");
+	stopAsk(event);
+}
+function pClicked(event) {
+	alert("p clicked!");
+	stopAsk(event);
+}
+
+document.addEventListener("click",documentClicked,true);
+document.getElementsByTagName("body")[0].addEventListener("click",bodyClicked,true);
+document.getElementsByTagName("div")[0].addEventListener("click",divClicked,true);
+document.getElementsByTagName("p")[0].addEventListener("click",pClicked,true);
+document.addEventListener("click",documentClicked,false);
+document.getElementsByTagName("body")[0].addEventListener("click",bodyClicked,false);
+document.getElementsByTagName("div")[0].addEventListener("click",divClicked,false);
+document.getElementsByTagName("p")[0].addEventListener("click",pClicked,false);
+
+</script>
+</body>
+</html>

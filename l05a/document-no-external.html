@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Document Properties</title>
+</head>
+<body>
+<input type="button" id="titleButton" value="Change Title" />
+<input type="button" id="consoleButton" value="Print to Console" />
+<script>
+function changeTitle() {
+	document.title = "Amazing Properties!";
+}
+document.getElementById("titleButton").addEventListener("click",changeTitle,false);
+
+function printToConsole() {
+	console.log("Print to Console!");
+}
+document.getElementById("consoleButton").addEventListener("click",printToConsole,false);
+</script>
+</body>
+</html>

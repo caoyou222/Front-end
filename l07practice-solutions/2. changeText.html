@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+</head>
+<body>
+<h1 id="header">Example</h1>
+<input type="text" id="theText" />
+<input type="button" id="theButton" value="Click Here" />
+<script>
+function changeText() {
+	var newText = document.getElementById("theText").value;
+	document.getElementById("header").innerHTML = newText;
+}
+
+var button = document.getElementById("theButton");
+button.addEventListener("click",changeText,false);
+</script>
+</body>
+</html>

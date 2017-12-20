@@ -1,0 +1,16 @@
+{
+	"coord":{"lon":-122.16,"lat":37.42},
+	"weather":[
+		{"id":801,"main":"Clouds","description":"few clouds","icon":"02d"}
+		],
+	"base":"stations",
+	"main":{"temp":65.41,"pressure":1017,"humidity":82,"temp_min":57.2,"temp_max":71.6},
+	"visibility":11265,
+	"wind":{"speed":6.93,"deg":270},
+	"clouds":{"all":20},
+	"dt":1500485700,
+	"sys":{"type":1,"id":392,"message":0.0046,"country":"US","sunrise":1500469407,"sunset":1500521171},
+	"id":0,
+	"name":"Stanford",
+	"cod":200
+}

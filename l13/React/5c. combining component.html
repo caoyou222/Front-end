@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script src="https://npmcdn.com/react@15.6.1/dist/react.js"></script>
+<script src="https://npmcdn.com/react-dom@15.6.1/dist/react-dom.js"></script>
+<script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+<script type="text/babel">
+
+class WeatherBox extends React.Component {
+  render() {
+    return <div className="weatherBox">
+        <b>Weather:</b> Sunny and Warm
+      </div>;
+  }
+}
+
+class NewsItem extends React.Component {
+	render() { 
+		return (
+		  <p className="newsItem">
+		  <b>{this.props.topic}</b>: {this.props.children}
+		  </p>
+		);
+	}
+}
+
+class NewsBox extends React.Component {
+	render() {
+		return (
+		  <div className="newsBox">
+			<h1>Today's News</h1>
+			<NewsItem topic="Breaking News">Another great day in paradise</NewsItem>
+			<NewsItem topic="Sports">Victory for <i>Home Team</i></NewsItem>
+			<WeatherBox />
+		  </div>
+		);	
+	}
+}
+
+ReactDOM.render(
+  <NewsBox />,
+  document.getElementById('root')
+);
+</script>
+</head>
+<body>
+<div id="root">
+</div>
+</body>
+</html>

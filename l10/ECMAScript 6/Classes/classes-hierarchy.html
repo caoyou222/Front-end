@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script>
+class Pair {
+  constructor(x,y) {
+	this.x = x;
+	this.y = y;
+  }
+
+  sum() {
+    return this.x + this.y;
+  }
+  
+  difference() {
+	return this.x - this.y;
+  }
+}
+
+class NamedPair extends Pair {
+  constructor(x,y,name) {
+    super(x,y);
+    this.name = name;
+  }
+  
+  allInfo() {
+	return this.sum() + this.name + this.difference();
+  }
+}
+
+
+var pairOne = new Pair(12,8);
+var pairTwo = new Pair(5,10);
+
+pairOne.sum();
+pairTwo.difference();
+
+var pairThree = new NamedPair(1,2,"Example");
+
+pairThree.sum();
+pairThree.allInfo();
+
+</script>
+</head>
+<body>
+</body>
+</html>

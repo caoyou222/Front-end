@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Radio Button Access Example</title>
+<style type="text/css">
+#photo {
+	float: left;
+}
+</style>
+</head>
+<body>
+<h2>Are You Looking for a Car or Truck?</h2>
+<div>
+<img id="photo" src="car.jpg" alt="Vehicle Photo" />
+  <label><input type="radio" name="photoSelect" checked="checked" id="carRadio" />
+  Car</label><br />
+  <label><input type="radio" name="photoSelect" id="truckRadio" />
+  Truck</label><br />
+</div>
+<script>
+function setPhoto(file) {
+	document.getElementById('photo').src = file;
+}
+
+document.getElementById("carRadio").addEventListener(
+					"click",
+					function() {setPhoto("car.jpg");},
+					false);
+document.getElementById("truckRadio").addEventListener(
+					"click",
+					function() {setPhoto("truck.jpg");},
+					false);
+</script>
+</body>
+</html>

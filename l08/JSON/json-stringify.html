@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Test</title>
+</head>
+<body>
+<textarea id="result" rows="2" cols="40">
+</textarea>
+
+
+<script>
+var example =
+	{name:'patrick', 
+	dog:'molly',
+	age: 12,
+	canine: true};
+	
+var output = JSON.stringify(example);
+console.log(typeof output); // result is a string
+
+document.getElementById("result").value = output;
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+Note that these examples will only run if placed on a webserver.  They will not run locally on your PC or Mac in most web browsers.  
+
+On the Stanford server, live Google examples will require CGI turned on for your account and will need to be placed in your cgi-bin folder.  You should be able to get static-news.html and sample-news.xml to work in the regular WWW folder, just make sure they are both in the same folder.
+
+Open the XML file in a web browser it looks pretty good in Chrome, Firefox, or Edge.  It will be downright unreadable in a text editor.

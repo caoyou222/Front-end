@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Next Document</title>
+</head>
+
+<body>
+<div>
+<input type="button" value="Go Back" id="backButton" onclick="history.back();" />
+</div>
+<script>
+document.getElementById("backButton").addEventListener(
+		"click",
+		function() {
+				history.back();
+			},
+		false
+	);
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+[
+	{
+		"name": "Molly",
+		"residence": "FloMo"
+	},
+	{
+		"name": "Maddie",
+		"residence": "FloMo",
+		"canine": true,
+		"age": 8,
+	},
+	{
+		"name": "Chloe",
+		"favorites": ["steak", "kibble", "shoes"]
+	}
+]

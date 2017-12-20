@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<script>
+function printStuff(x, y, ... rest) {
+	console.log("printStuff: " + x + ", " + y);
+	for(var arg of rest) {
+		console.log(arg);
+	}
+}
+
+printStuff(1,2,6,7,8);
+
+function defaultStuff(x, y = 5) {
+	console.log("defaultStuff: " + x + ", " + y);
+}
+
+defaultStuff(5,10);
+defaultStuff(5);
+
+var plus = (x,y) => {return x + y;}
+plus(3,5);
+
+((x,y) => {return x - y;})(10,5);
+
+console.log(plus(3,5));
+console.log(((x,y) => {return x - y;})(10,5));
+
+function takesThree(x, y, z) {
+	console.log(x + "," + y + "," + z);
+}
+
+var exArray = ["a","b","c"];
+takesThree(...exArray);
+
+</script>
+</head>
+<body>
+</body>
+</html>

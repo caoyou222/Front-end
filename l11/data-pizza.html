@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Pizza Ingredients</title>
+</head>
+<body>
+<body>
+<h2>Choose Pizza Ingredients</h2>
+<div>
+<form id="pizza">
+<p>
+<label><input type="checkbox" data-price="2" />Pepperoni</label>
+<label><input type="checkbox" data-price="2" />Sausage</label>
+<label><input type="checkbox" data-price="2" />Artichoke</label>
+<label><input type="checkbox" data-price="3" />Eggplant</label>
+<label><input type="checkbox" />Olives</label>
+<label><input type="checkbox" />Onions</label>
+<label><input type="checkbox" />Mushrooms</label>
+</p>
+<p><b>Total Price:</b> 
+   <input type="text" id="total" value="8" size="5" />
+</p>
+<p><i>$8 Cheese Only</i>
+</p>
+</form>
+</div>
+<script>
+function calculateTotal() {
+  var checkBoxes = document.querySelectorAll('input[type="checkbox"]');
+  var total = 8;
+  
+  for(box of checkboxes) {
+	if(box.checked) {
+		console.dir(box.dataset);
+		if (box.dataset.price) {
+			total = total + parseFloat(box.dataset.price);
+		} else {
+			total = total + 1;
+		}
+	}
+  }
+
+  document.getElementById("total").value = total;
+}
+
+var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+for(box of checkboxes) {
+	box.addEventListener("click",calculateTotal,false);
+}
+</script>
+</body>
+</html>

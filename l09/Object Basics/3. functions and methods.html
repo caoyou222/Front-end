@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+</head>
+<body>
+<script>
+var example = {
+		name: "Molly",
+		nickname: "FloPup",
+		canine: true,
+		age: 8,
+		
+		printInfo: function() {
+			console.log(this.name);
+		}
+	};
+	
+example.detailedInfo = function() {
+			console.log(this.name);
+			console.log(this.age);
+	};
+
+example.printInfo();
+example.detailedInfo();
+
+function printAge() {
+	console.log(this.age);
+}
+var age = 2;
+
+example.getAge = printAge;
+
+example.getAge();
+
+console.log(example.getAge);
+
+example.getAge = printAge(); // don't do it this way
+
+console.log(example.getAge);
+
+</script>
+</body>
+</html>

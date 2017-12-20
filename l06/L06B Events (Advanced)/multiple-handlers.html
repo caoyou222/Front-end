@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Nesting Example</title>
+</head>
+
+<body>
+<div>
+<h1>Part One</h1>
+<p>A paragraph in part one</p>
+<p>Another paragraph in part one</p>
+</div>
+<div>
+<h1>Part Two</h1>
+<p>A paragraph in part two</p>
+<p>Another paragraph in part two</p>
+</div>
+
+<script>
+function bodyClickedOne(event) {
+	alert("body clicked!");
+}
+function bodyClickedTwo(event) {
+	alert("really, the body was clicked!");
+}
+document.getElementsByTagName("body")[0].addEventListener("click",bodyClickedOne,false);
+document.getElementsByTagName("body")[0].addEventListener("click",bodyClickedTwo,false);
+
+</script>
+</body>
+</html>

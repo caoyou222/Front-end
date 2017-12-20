@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+</head>
+<body>
+<h1>To Do</h1>
+<ul id="theList">
+</ul>
+<input type="text" id="theText" />
+<input type="button" id="theButton" value="Click Here" />
+<script>
+var listitems = "";
+function addItem() {
+	var newText = document.getElementById("theText").value;
+	listitems = listitems + "<li>" + newText;
+	document.getElementById("theList").innerHTML = listitems;
+}
+
+var button = document.getElementById("theButton");
+button.addEventListener("click",addItem,false);
+</script>
+</body>
+</html>

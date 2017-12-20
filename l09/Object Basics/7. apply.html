@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+</head>
+<body>
+<script>
+var myArray = [
+		{name: "Molly",
+		 dorm: "FloMo",
+		 age: 12},
+		{name: "Tamara",
+		 dorm: "FloMo",
+		 age: 21},
+		{name: "Rob",
+		 dorm: "GovCo",
+		 age: 20},
+		{name: "Nicki",
+		 dorm: "GovCo",
+		 age: 20},	 
+	];
+	
+function printInfo() {
+	console.log("Name: " + this.name);
+	console.log("Dorm: " + this.dorm);
+}
+
+for(var student of myArray) {
+	printInfo.apply(student);
+}
+</script>
+</body>
+</html>

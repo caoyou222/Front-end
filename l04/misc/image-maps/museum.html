@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Cantor Art Museum</title>
+<style type="text/css">
+h1 {
+	text-align: center;
+}
+#museummap {
+	float: left;
+	margin-right: 10px;
+}
+
+</style>
+</head>
+<body>
+<div>
+<h1>The Cantor Center for the Visual Arts</h1>
+
+<img src="cantor.gif" id="museummap" usemap="#rooms" alt="Cantor Map" /> 
+<!-- cantor.gif image scanned from actual Cantor visitor's map -->
+<p>Welcome to the Cantor Center for the Visual Arts. To learn more about a room's 
+collections, click on the room on the map at left. </p>
+<map id="rooms" name="rooms">
+<area shape="poly" 
+        coords="51,8,99,8,133,44,133,92,99,126,51,126,17,91,17,44"
+        href="rooms/rodin.html" alt="Go to Rodin Webpage" />
+<area shape="rect" 
+      coords="38,146,103,259" 
+      href="rooms/rodin.html" alt="Go to Rodin Webpage" />
+<area shape="rect" 
+      coords="105,146,211,201" 
+        href="rooms/mediterranean.html" alt="Go to Mediterranean Webpage" />
+<area shape="rect" 
+      coords="105,204,211,259"
+      href="rooms/african.html" alt="Go to African Webpage" />
+<area shape="circle" 
+      coords="212,169,30"
+      href="rooms/egyptian.html" alt="Go to Egyptian Webpage" />
+</map>
+</div>
+</body>
+</html>

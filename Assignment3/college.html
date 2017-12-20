@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>College Information</title>
+	<link rel="stylesheet" href="college.css">
+	<script src="college.js" defer></script>
+</head>
+
+<body>
+<div id="main">
+<h1>Bay Area Colleges and Universities</h1>
+<div class="panel">
+<div class="column">
+<table id="result">
+	<thead>
+	<tr>
+		<th>Name</th>
+		<th>SAT High</th>
+		<th>SAT Low</th>
+		<th>Tuition</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr class="even">
+		<td>Stanford</td>
+		<td>1570</td>
+		<td>1380</td>
+		<td>44757</td>
+	</tr>
+	<tr class="odd">
+		<td>UC Berkeley</td>
+		<td>1500</td>
+		<td>1250</td>
+		<td>13844</td>
+	</tr>
+	<tr class="even">
+		<td>UC Santa Cruz</td>
+		<td>1280</td>
+		<td>1000</td>
+		<td>13398</td>
+	</tr>
+	<tr class="odd">
+		<td>USF</td>
+		<td>1270</td>
+		<td>1070</td>
+		<td>41450</td>
+	</tr>
+	<tr class="even">
+		<td>SCU</td>
+		<td>1380</td>
+		<td>1190</td>
+		<td>43812</td>
+	</tr>
+	<tr class="odd">
+		<td>Mills College</td>
+		<td>1250</td>
+		<td>1040</td>
+		<td>42918</td>
+	</tr>
+	<tr class="even">
+		<td>SFSU</td>
+		<td>1110</td>
+		<td>880</td>
+		<td>6468</td>
+	</tr>
+	<tr class="odd">
+		<td>SJSU</td>
+		<td>1160</td>
+		<td>880</td>
+		<td>9496</td>
+	</tr>
+	<tr class="even">
+		<td>Sonoma State</td>
+		<td>1090</td>
+		<td>880</td>
+		<td>7276</td>
+	</tr>
+	<tr class="odd">
+		<td>CalState East Bay</td>
+		<td>1010</td>
+		<td>800</td>
+		<td>6550</td>
+	</tr>
+	</tbody>
+</table>
+</div>
+
+<div class="column">
+<table>
+	<thead>
+	<tr><th colspan="5" scope="colgroup">Search Criteria</th></tr>
+	<form id="ownership">
+	<tr>
+		<td><label><input type="radio" name="owner" value="public">Public</label></td>
+		<td><label><input type="radio" name="owner" value="private">Private</label></td>
+		<td><label><input type="radio" name="owner" value="don't care">Don't Care</label></td>
+	</tr>
+	</form>
+	</thead>
+	<tbody>
+	<tr>
+		<td>Maximum Tuition</td>
+		<td><input type="textbox" id="maxtuition" value=""></td>
+	</tr>
+	<tr>
+		<td>Maximum High SAT</td>
+		<td><input type="textbox" id="maxSAT" value=""></td>
+	</tr>
+	<tr>
+		<td>Minimum Low SAT</td>
+		<td><input type="textbox" id="minSAT" value=""></td>
+	</tr>
+</table>
+<input type="button" value="Update" id="search">
+</div>
+</div>
+
+</body>
+</html>

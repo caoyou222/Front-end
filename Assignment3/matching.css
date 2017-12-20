@@ -1,0 +1,16 @@
+.panel{
+	overflow: hidden;
+}
+
+#main{
+	width: 1000px;
+	margin: auto;
+}
+
+.column{
+	float: left;
+	font-family: sans-serif;
+	margin: 20px;
+	margin-top: 200px;
+	margin-bottom: 40px;
+}

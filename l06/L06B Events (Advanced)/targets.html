@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+</head>
+<body>
+<div>
+<h1>Header</h1>
+<p>Sample Paragraph</p>
+<p>Another Paragraph <em>With an Emphasis</em></p>
+</div>
+
+<h2>Output</h2>
+<script>
+function moveInfo(event) {
+	var output = "";
+	output += "Entering " + event.target.nodeName;
+	output += "<br />Leaving " + event.relatedTarget.nodeName;
+	output += "<br />Handled By " + event.currentTarget.nodeName;
+	document.getElementsByTagName("h2")[0].innerHTML = output;
+}
+
+document.getElementsByTagName("div")[0].addEventListener("mouseover",moveInfo,false);
+
+</script>
+</body>
+</html>

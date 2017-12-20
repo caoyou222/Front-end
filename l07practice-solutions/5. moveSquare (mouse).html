@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title></title>
+<style>
+#theSquare {
+	position: absolute;
+	top: 200px;
+	left: 200px;
+	height: 100px;
+	width: 100px;
+	background-color: red;
+}
+</style>
+</head>
+<body>
+<h1 id="header">Example</h1>
+<div id="theSquare"></div>
+<script>
+function moveSquare(event) {
+	square = document.getElementById("theSquare");
+
+	square.style.left = event.clientX + "px";
+	square.style.top = event.clientY + "px";
+}
+
+document.addEventListener("click",moveSquare,false);
+</script>
+</body>
+</html>

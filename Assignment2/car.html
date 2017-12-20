@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Car Options</title>
+	<link rel="stylesheet" href="car.css">
+	<script src="car.js" defer> </script>
+</head>
+
+<body>
+<div class="main">
+<h1><span id="title">Configure Your GT Super Sportscar</span></h1>
+<div class="panel">
+	<div class="column">
+	<form id="price">
+	<table>
+		<th>Configuration</th>
+		<tr>
+			<td><label><input value= "17790" name="config" type="radio" />GT Manual</label></td>
+			<td class="right">$17,790.00</td>
+		</tr>
+
+		<tr>
+			<td><label><input value= "18590" name="config" type="radio"  />GT Automatic</label></td>
+			<td class="right">$18,590.00</td>
+		</tr>
+
+		<tr>
+			<td><label><input value= "22455" name="config" type="radio"  />GT-S Manual</label></td>
+			<td class="right">$22,455.00</td>
+		</tr>
+
+		<tr>
+			<td><label><input value= "23155" name="config" type="radio"  />GT-S Automatic</label></td>
+			<td class="right">$23,155.00</td>
+		</tr>
+	</table>
+
+	<table>
+		<th>Factory Options</th>
+		<tr>
+			<td><label><input value= "1235" name="factory" type="radio"  />Option Combo #1</label></td>
+			<td class="right">$1235.00</td>
+		</tr>
+		<tr>
+			<td><li>Power Windows, Doors, Cruise Control</li></td>
+		</tr>
+
+		<tr>
+			<td><label><input value= "3354" name="factory" type="radio"  />Option Combo #2</label></td>
+			<td class="right">$3354.00</td>
+		</tr>
+		<tr>
+			<td><li>Rear Spoiler and Fog Lamps</li>
+				<li>Keyless Entry</li>
+				<li>Power Tilt & Slide Moonroof</li>
+				<li>Power Windows, Doors, Cruise Control</li>
+			</td>
+
+		<tr>
+			<td><label><input value= 0 name="factory" type="radio"" />No Combo</label></td>
+			<td class="right">$0</td>
+		</tr>
+	</table>
+
+	<table>
+		<th>Dealer Options</th>
+		<tr>
+			<td><label><input value = "550" type="checkbox"/>Upgraded Stereo System</label></td>
+			<td class="right">$550.00</td>
+		</tr>
+
+		<tr>
+			<td><label><input value = "399" type="checkbox"/>VIP Security System</label></td>
+			<td class="right">$399.00</td>
+		</tr>
+
+		<tr>
+			<td><label><input value="295" type="checkbox" />Auto-Dimming Mirror</label></td>
+			<td class="right">$295.00</td>
+		</tr>
+	</table>
+
+	<table>
+		<th>Total Price</th>
+		<tr>
+			<td><input type="text" id="rs" value= "0" /></td>
+			<td class="right"><input value="Calculate Total" id="calculateButton" type="button"/></td>
+		</tr>
+	</table>
+	</form>
+	</div>
+
+	<div class="column">
+	<table>
+		<th>Choose A Color</th>
+		<tr>
+		<td>
+		<select id="pulldown" size=5>
+			<option selected="selected" value="black.jpg"  onclick="setPhoto();">black</option>
+			<option value="red.jpg" onclick="setPhoto();">red</option>
+			<option value="white.jpg" onclick="setPhoto();">white</option>
+			<option value="silver.jpg" onclick="setPhoto();">silver</option>
+			<option value="blue.jpg" onclick="setPhoto();">blue</option>
+		</select>
+		</td>
+		<td>
+		<img id="photo" src="black.jpg" alt="car"/>
+		</td>
+		</tr>
+	</table>
+	</div>
+
+</div>
+</div>
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+</html>
