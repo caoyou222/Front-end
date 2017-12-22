@@ -16,6 +16,7 @@ function shuffle()
   }
 }
 
+shuffle();
 var count = 0;
 var card1, card2;
 var flip1 = 0, flip2 = 0;
@@ -40,19 +41,27 @@ function flip(idname)
 	if(flip1 == 0)
 	{
 		card1 = document.getElementById(idname);
-		flip1 = 1;
-		card1.src = cardArray[idname].cardName;
-		card1.value = cardArray[idname].value;
+		if(card1.src.indexOf("clear.png") == -1)
+		{
+			flip1 = 1;
+			card1.src = cardArray[idname].cardName;
+			card1.value = cardArray[idname].value;
+		}
+		
 	}
 	
 	else if (flip1 == 1 && flip2 == 0 && idname != card1.id)
 	{
 		card2 = document.getElementById(idname);
-		flip2 = 1;
-		card2.src = cardArray[idname].cardName;
-		card2.value = cardArray[idname].value;
-		if(card1.value == card2.value)	setTimeout(match, 1000);
-		else setTimeout(goback, 1500);
+		if(card2.src.indexOf("clear.png") == -1)
+		{
+			flip2 = 1;
+			card2.src = cardArray[idname].cardName;
+			card2.value = cardArray[idname].value;
+			if(card1.value == card2.value)	setTimeout(match, 1000);
+			else setTimeout(goback, 1500);
+		}
+		
 	}
 }
 
