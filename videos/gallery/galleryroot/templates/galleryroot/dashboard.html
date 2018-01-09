@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block custom_css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'searchengine/stylesheets/dashboard.css'%}" />
+{% endblock %}
+
+{% block content %}
+<header id="page-header">
+	<div id="page-hearder-img">
+		<a href="##">
+			<img src="#" width="100" height="100">
+		</a>
+	</div>
+	<div id="page-header-headings">
+		<h1>###</h1>
+	</div>
+	<div>
+		<button id="dsbtn">Dashboard</button>
+	</div>
+</header>
+
+<aside id=nav>
+	<div class="header">
+		<h2>Navigation</h2>
+	</div>
+	<div class="content">
+		<ul>
+			<li>
+				<p>Site home</p>
+				<li>
+					<p>My videos</p>
+					<ul>
+						<li>Type 1</li>
+						<li>Type 2</li>
+					</ul>
+				</li>
+			</li>
+		</ul>
+	</div>
+</aside>
+
+{% endblock %}
+
+{% block custom_scripts %}
+{% endblock %}

@@ -1,0 +1,6 @@
+/env/*
+*.pyc
+*.mp4
+*.jpg
+*.DS_Store
+*.swp

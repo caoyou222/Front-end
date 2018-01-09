@@ -1,0 +1,372 @@
+{% load static %}
+<head>
+	<!-- webpage info -->
+	<meta charset="utf-8" />
+	<title>Dance Department Video Galleries</title>
+	<meta name="author" content="TianTian" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+
+	<!-- responsive support -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<!-- stylesheets -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'searchengine/stylesheets/index_page.css' %}" />
+ <!--    <script src="https://code.jquery.com/jquery-1.12.3.min.js"   integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+</head>
+<body>
+<div id="content">
+	<div id="topbar">
+		{% if user.is_authenticated %}
+		<div onclick="this.querySelector('form').submit()">
+			<form action="{% url 'searchengine:logout' %}" method="post">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<div id="user_auth_btn" >LOGOUT</div>
+			</form>
+		{% else %}
+		<div>
+			<div id="user_auth_btn">LOG IN / SIGN UP</div>
+			<div id="user_auth_modal">
+				<div id="user_auth_modal_content">
+					<span id="close_btn">&times;</span>
+					<div id="login_form">
+						<h2>User Log In</h2>
+						{% if profile == 'failed' %}
+						<p>Login Failed Please Try Again.</p>
+						{% endif %}
+						<form action="{% url 'searchengine:login' %}" method="post">
+							{% csrf_token %}
+							{{ form.as_p }}
+							<input type="text" name="username" placeholder="Username"><br>
+							<input type="password" name="password" placeholder="Password"><br>
+							<input type="submit" value="LOG IN">
+						</form>
+					</div>
+					<div id="or_bar">OR</div>
+					<div id="signup_form">
+						<h2>Guest Sign Up</h2>
+						<form action="{% url 'searchengine:register' %}" method="post">
+							{% csrf_token %}
+							{{ form.as_p }}
+							<input type="text" name="username" placeholder="Username"><br>
+							<input type="password" name="password" placeholder="Password"><br>
+							<input type="password" name="re-password" placeholder="Confirm Password"><br>
+							<input type="submit" value="SIGN UP">
+						</form>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+		</div>
+	</div>
+			<div class="slider-control" id="slider-control">
+				  <a href="#page1" class="active">
+					<div class="dot"></div>
+				  </a>
+				  <a href="#page2">
+					<div class="dot"></div>
+				  </a>
+				  <a href="#page3">
+					<div class="dot"></div>
+				  </a>
+				  <a href="#page4">
+					<div class="dot"></div>
+				  </a>
+				  <a href="#page5">
+					<div class="dot"></div>
+				  </a>
+			</div>
+			<div class="section bg-color-white" id="page1">
+				<div class="hgroup">
+					<h1>Dance Video Galleries</h1>
+					<h2>St. Olaf College</h2>
+				</div>
+				<div class="nav">
+					<form action="#">
+						<div>
+							<input type="text" placeholder="Search!">
+							<input type="button" value="Search">
+						</div>
+					</form>
+				</div>
+				<div id="bar_1" class="slider-control">
+					<p><a href="#page2">Explore the project more!</a></p>
+				</div>
+			</div>
+			<div class="section introduction bg-color-olaf" id="page4">
+
+
+                {% if latest_video_list %}
+
+
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-body">
+                      
+                        <video width="320" height="240" id="videoframe" controls preload="auto">
+                            <source id="videosource" src="" type="video/mp4">
+                        </video> 
+                        
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                 <div align="center">
+                    <button class="btn btn-default filter-button" data-filter="all">All</button>
+                    <button class="btn btn-default filter-button" data-filter="2017">2017</button>
+                    <button class="btn btn-default filter-button" data-filter="2016">2016</button>
+                    <button class="btn btn-default filter-button" data-filter="2015">2015</button>
+                    <button class="btn btn-default filter-button" data-filter="2014">2014</button>
+                </div>
+                <br/>
+
+
+                 <div align="center">
+                    <button class="btn btn-default filter-button" data-filter="all">All</button>
+                    <button class="btn btn-default filter-button" data-filter="2017">2017</button>
+                    <button class="btn btn-default filter-button" data-filter="2016">2016</button>
+                    <button class="btn btn-default filter-button" data-filter="2015">2015</button>
+                    <button class="btn btn-default filter-button" data-filter="2014">2014</button>
+                </div>
+                <br/>
+                 
+
+                <div class="container-fluid">
+                    <div class="row text-center">
+                        <h3 class="headermessage">Videos</h3>
+                    </div>
+                    {% for video in latest_video_list %}
+                    <div class="row">
+                        <div class="image-block col-sm-4 filter {{ video.video_pub_date.year }}"  style="background: url({{ video.video_thumbnail.url }}) no-repeat center top;background-size:cover;" onclick="changeVideo('{{ video.video_file.url }}')">
+                            
+                            <p> {{ video.video_name }} </p>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                .filter-button:hover
+                {
+                    font-size: 18px;
+                    border: 1px solid #42B32F;
+                    border-radius: 5px;
+                    text-align: center;
+                    color: #ffffff;
+                    background-color: #42B32F;
+
+                }
+                .btn-default:active .filter-button:active
+                {
+                    background-color: #42B32F;
+                    color: white;
+                }
+
+                .headermessage {
+                  margin: 19px;
+                  color: black;
+                  font-family: 'Open Sans', sans-serif;
+                  font-size: 16px;
+                  font-weight: bold;
+                }
+                .image-block {
+                    border: 3px solid white ;
+                    background-color: black;
+                    padding: 0px;    
+                    margin: 0px;
+                    height:200px;
+                    text-align: center;
+                    vertical-align: bottom;
+                }
+                .image-block > p {
+                    width: 100%;
+                    height: 100%;
+                    font-weight: normal;
+                    font-size: 19px;
+                    padding-top: 150px;
+                    background-color: rgba(3,3,3,0.0);
+                    color: rgba(6,6,6,0.0);
+                }
+                .image-block:hover > p {
+                    background-color: rgba(3,3,3,0.5);    
+                    color: white;    
+                }
+                </style>
+
+                    {% endfor %}
+                 
+                {% else %}
+                <h1 class="textNoVideosfound" >No videos found.</h1>
+                 
+                {% endif %}
+
+				</div>
+		</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/plugins/ScrollToPlugin.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script>
+		//dot effects
+		function updateSliderControl(){
+			// get all the slider links
+			var links = document.querySelectorAll(".slider-control a");
+
+			for(var i = 0; i < links.length; ++i){
+				var link = links[i];
+
+				// Get the section pointed to by the link
+				var section = $(document.querySelector(link.getAttribute("href")));
+				var sectionTop = section.offset().top;
+				var sectionBottom = sectionTop + section.height();
+
+				// Check if window.scrollY is between the section.
+				if(window.scrollY >= sectionTop && window.scrollY < sectionBottom){
+					link.className = "active";
+				}
+				else{
+					link.className = "";
+				}
+			}
+		}
+		// Use the onscroll callback to update slider.
+		window.onscroll = function(){
+			// ...
+			updateSliderControl();
+		}
+
+		// Update the slider for the first time when the page is loaded.
+		window.onload = function(){
+			// ...
+			updateSliderControl();
+		};
+	</script>
+
+	<script>
+		//scroll animation
+		function scrollToElement(element){
+			var getSectionElement = $(document.querySelector(element));
+			var topOfElement = getSectionElement.offset().top;
+
+			TweenMax.to(window,1,{
+			scrollTo:{
+				y: topOfElement,
+			},
+
+				ease: Power2.easeInOut,
+			});
+		}
+
+		function addSmoothScrolling(){
+			var links = document.querySelectorAll(".slider-control a");
+
+			for(var i = 0; i < links.length; ++i){
+				var link = links[i];
+
+				(function (_link){
+					link.addEventListener("click",function(event){
+						// `event` is the mouse click event
+						event.preventDefault();
+
+						// BUG WARNING! Fix with a closure or ES6 `let`.
+						var href = _link.getAttribute("href");
+
+						scrollToElement(href);
+					});
+				})(link);
+			}
+		}
+
+		window.onload = function() {
+			// ...
+			addSmoothScrolling();
+		};
+	</script>
+
+	<script>
+		//keyboard and scroll control
+		function scrollControl(){
+			var links = document.querySelectorAll(".slider-control a");
+
+		}
+
+// user auth btn actions
+var btn = document.getElementById("user_auth_btn");
+var modal = document.getElementById("user_auth_modal");
+var close_btn = document.getElementById("close_btn");
+
+btn.onclick = function() {
+    modal.style.display = "block";
+};
+
+close_btn.onclick = function() {
+    modal.style.display = "none";
+};
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+
+	</script>
+</body>
+
+
+<script>
+$(document).ready(function(){
+
+    $(".filter-button").click(function(){
+        var value = $(this).attr('data-filter');
+        
+        if(value == "all")
+        {
+            //$('.filter').removeClass('hidden');
+            $('.filter').show('1000');
+        }
+        else
+        {
+//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+            $(".filter").not('.'+value).hide('3000');
+            $('.filter').filter('.'+value).show('3000');
+            
+        }
+    });
+    
+    if ($(".filter-button").removeClass("active")) {
+$(this).removeClass("active");
+}
+$(this).addClass("active");
+
+});
+
+$(document).ready(function(){
+  $("#myModal").on("hidden.bs.modal",function(){
+    $("#videosource").attr("src","#");
+  })
+})
+
+function changeVideo(arg){
+  var source=document.getElementById("videosource");
+  source.src= arg;
+  // Reload video because we just changed the source dynamically!
+  source.parentNode.load();
+
+  $("#myModal").modal("show");
+}
+</script>

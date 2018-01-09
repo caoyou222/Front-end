@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Create Tag</h2>
+    <form action="{% url 'searchengine:make_tag' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="text" name="tag" />
+    <button type="submit">Create</button>
+  </form>
+{% endblock %}

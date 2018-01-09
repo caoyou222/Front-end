@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block custom_css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'searchengine/stylesheets/search.css'%}" />
+{% endblock %}
+
+{% block content %}
+<header>
+	<div id="results">
+		<div id="results_text">
+			<h2>Your search results</h2>
+		</div>
+		<div id="filter">
+			<div id="filter_dropdown_btn" onclick="dropFilter()">
+				<i class="material-icons">filter_list</i> FILTER</button>
+			</div>
+		</div>
+	</div>
+	<div id="filter_dropdown">
+		<div id="upload_date">
+			<p>Upload Date</p>
+			<ul>
+				<li><a href="?year=17_18">2017-18</a></li>
+				<li><a href="?year=16_17">2016-17</a></li>
+				<li><a href="?year=15_16">2015-16</a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+
+{% if latest_video_list %}
+<div id="video_list">
+	{% for video in latest_video_list %}
+	<div class="video_block" class="{{ video.video_pub_date.year }}" onclick="changeVideo('{{ video.video_file.url }}')">
+		<div style="background: url({{ video.video_thumbnail.url }}) no-repeat center top;background-size:cover; width:480px; height:320px" >          
+			
+		</div>
+		<p> {{ video.video_name }} </p>
+	</div>
+	{% endfor %}
+	<div id="video_modal">
+		<div id="video_modal_content">
+			<video width="640" height="480" id="videoframe" controls preload="auto">
+				<source id="videosource" src="" type="video/mp4">
+			</video>
+		</div>
+	</div>
+{% else %}
+<h1 style="text-align: center; margin-top: 20px">No videos found.</h1>
+{% endif %}
+{% endblock %}
+
+{% block custom_scripts %}
+{% load static %}
+<script src="{% static 'searchengine/scripts/search.js'%}"></script>
+{% endblock %}

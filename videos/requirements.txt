@@ -1,0 +1,13 @@
+decorator==4.0.11
+Django==1.11.6
+django-taggit==0.22.1
+django-user-tags==1.2.1
+imageio==2.1.2
+moviepy==0.2.3.2
+numpy==1.13.3
+olefile==0.44
+Pillow==4.3.0
+psycopg2==2.7.3.1
+pytz==2017.2
+South==1.0.2
+tqdm==4.11.2

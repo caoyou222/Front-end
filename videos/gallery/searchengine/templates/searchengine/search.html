@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block custom_css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'searchengine/stylesheets/search.css'%}" />
+{% endblock %}
+
+{% block content %}
+
+<header>
+	<div id="results">
+		<div id="results_text">
+			<h2>Videos</h2>
+		</div>
+		<div id="filter">
+			<div id="filter_dropdown_btn" onclick="dropFilter()">
+				<i class="material-icons">filter_list</i> FILTER</button>
+			</div>
+		</div>
+	</div>
+	<div id="filter_dropdown">
+		<div id="upload_date">
+			<p>Upload Date</p>
+			<ul>
+				<li><a href="?year=17_18">2017-18</a></li>
+				<li><a href="?year=16_17">2016-17</a></li>
+				<li><a href="?year=15_16">2015-16</a></li>
+			</ul>
+		</div>
+		<div id="category">
+			<p>Categories</p>
+			<ul>
+				{% for t in tag_names %}
+    			<li><a href="{% url 'searchengine:tag' name=t %}" onmouseover="changecolor(this,'blue')" onmouseout="changecolor(this,'black')">{{ t }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</header>
+<div id="create_tag">
+	<h2>Create Tag</h2>
+    <form action="{% url 'searchengine:make_tag' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="text" name="tag" />
+    <button type="submit">Create</button>
+  </form>
+ </div>
+
+{% if latest_video_list %}
+<div id="video_list">
+	{% for video in latest_video_list %}
+	<div class="video_block" class="{{ video.video_pub_date.year }}" onclick="changeVideo('{{ video.video_file.url }}')">
+		<div style="background: url({{ video.video_thumbnail.url }}) no-repeat center top;background-size:cover; width:320px; height:214px" >          
+			<p> {{ video.video_name }} </p>
+		</div>
+	</div>
+	{% endfor %}
+	<div id="video_modal">
+		<div id="video_modal_content">
+			<video width="640" height="480" id="videoframe" controls preload="auto">
+				<source id="videosource" src="" type="video/mp4">
+			</video>
+		</div>
+	</div>
+{% else %}
+<h1 style="text-align: center; margin-top: 20px">No videos found.</h1>
+{% endif %}
+{% endblock %}
+
+{% block custom_scripts %}
+{% load static %}
+<script src="{% static 'searchengine/scripts/search.js'%}"></script>
+{% endblock %}

@@ -1,0 +1,143 @@
+.material-icons {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+#results {
+	width: 90%; 
+	margin-top: 5px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+    margin-bottom: 10px;
+
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 10px;
+}
+
+#results_text {
+	width: 50%;
+    text-align: left;
+}
+
+#filter {
+    width: 50%;
+    text-align: right;
+}
+
+#filter_dropdown_btn {
+    display: inline-block;
+    color: #D69523;
+    font-size: 16px;
+    border: none;
+}
+
+#filter_dropdown_btn:hover {
+    cursor: pointer;
+}
+
+#filter_dropdown {
+    width: 90%;
+    display: none;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+#filter_dropdown div {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
+}
+
+#filter_dropdown div p {
+    width: 70%;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+#filter_dropdown div ul li{
+    width: 100%;
+    margin-top:15px;
+    margin-bottom: 15px;
+}
+
+#filter_dropdown a {
+    flex-grow: 1;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+
+#video_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.video_block {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    min-height: 50px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#video_modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#video_modal_content {
+  background-color: #fefefe;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  border: 0px solid #888;
+  border-radius: 5px;
+  width: 70%;
+  height: 50%;
+  min-width: 700px;
+  max-width: 900px;
+  min-height: 500px;
+  max-height: 700px;
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
