@@ -1,0 +1,9 @@
+# pack-refs with: peeled fully-peeled 
+0423772ce3ac58b73d342ab8ff3c74234aff0d9e refs/heads/cao1
+d954b0bda105e47bcf255ce9fec814427980906e refs/heads/dev
+6ed7eb83c40a7d4fa0d16e9d953e4a4bb54e98e8 refs/heads/dokku
+f92a95dd8062d633229bb9b5a4a2204678dc420c refs/heads/ge1
+3122e39724814425e3c20412bcf7bc9a84e58b13 refs/heads/leeas
+c39ec94b76c87184b9b38923b0fb6ddccb31eef2 refs/heads/master
+41b219257c1b30a94c17e5ac111d5eac26ed96ee refs/merge-requests/1/head
+26e6fcdbe6a04088ac43870931e254ce5c1ffdbf refs/merge-requests/2/head
